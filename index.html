@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b16">
+    <title>NCERT Brain Battle 2.0</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <header>
+        <div class="logo">🧠 BRAIN<span>BATTLE</span></div>
+        <div class="class-tag">CLASS 11 • CBSE</div>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section id="home" class="screen active">
+
+            <div class="hero">
+                <div class="tag">THE ULTIMATE LEARNING ARENA</div>
+
+                <h1>Challenge Your<br>
+                    <span>Knowledge.</span>
+                </h1>
+
+                <p>
+                    Master your NCERT syllabus.
+                    Test your concepts. Become a champion.
+                </p>
+
+                <div class="hero-info">
+                    <span>⚡ 15 SEC TIMER</span>
+                    <span>❤️ 3 LIVES</span>
+                    <span>⭐ XP REWARDS</span>
+                </div>
+            </div>
+
+            <h2>Select Your Subject</h2>
+            <p class="muted">Choose a subject to start your battle.</p>
+
+            <div class="subjects">
+
+                <button class="subject physics"
+                    onclick="startGame('Physics')">
+                    <span class="subject-icon">⚛️</span>
+                    <b>Physics</b>
+                    <small>Motion • Energy • Laws</small>
+                    <span class="play-label">PLAY →</span>
+                </button>
+
+                <button class="subject chemistry"
+                    onclick="startGame('Chemistry')">
+                    <span class="subject-icon">🧪</span>
+                    <b>Chemistry</b>
+                    <small>Atoms • Bonds • Reactions</small>
+                    <span class="play-label">PLAY →</span>
+                </button>
+
+                <button class="subject maths"
+                    onclick="startGame('Mathematics')">
+                    <span class="subject-icon">📐</span>
+                    <b>Mathematics</b>
+                    <small>Algebra • Sets • Calculus</small>
+                    <span class="play-label">PLAY →</span>
+                </button>
+
+                <button class="subject cs"
+                    onclick="startGame('Computer Science')">
+                    <span class="subject-icon">💻</span>
+                    <b>Computer Science</b>
+                    <small>Python • Logic • Computing</small>
+                    <span class="play-label">PLAY →</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="screen">
+
+            <div class="quiz-top">
+                <button class="back" onclick="goHome()">← EXIT</button>
+                <span id="subjectName">PHYSICS</span>
+                <span id="timer">15s</span>
+            </div>
+
+            <div class="stats">
+                <div>⭐ SCORE <b id="score">0</b></div>
+                <div>❤️ LIVES <b id="lives">3</b></div>
+                <div>🎯 LEVEL <b id="level">1</b></div>
+            </div>
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <div class="question-box">
+
+                <div class="question-meta">
+                    <span class="tag">KNOWLEDGE CHECK</span>
+                    <span id="chapterName">CHAPTER</span>
+                </div>
+
+                <h2 id="question">Loading questions...</h2>
+
+                <div id="options" class="options"></div>
+
+                <p id="feedback"></p>
+
+                <button id="nextBtn"
+                    onclick="nextQuestion()"
+                    class="next-btn"
+                    hidden>
+                    NEXT QUESTION →
+                </button>
+
+            </div>
+
+            <p class="game-note">
+                Think fast. Every correct answer earns 10 XP.
+            </p>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section id="result" class="screen">
+
+            <div class="result-card">
+
+                <div class="trophy">🏆</div>
+
+                <span class="tag">BATTLE COMPLETED</span>
+
+                <h1>MISSION COMPLETE!</h1>
+
+                <p>Your final score</p>
+
+                <div class="final-score" id="finalScore">0 XP</div>
+
+                <h2 id="rank">GENIUS</h2>
+
+                <p id="resultMessage"></p>
+
+                <div class="result-stats">
+                    <div>
+                        <b id="correctCount">0</b>
+                        <small>Correct</small>
+                    </div>
+                    <div>
+                        <b id="wrongCount">0</b>
+                        <small>Incorrect</small>
+                    </div>
+                    <div>
+                        <b id="accuracy">0%</b>
+                        <small>Accuracy</small>
+                    </div>
+                </div>
+
+                <button class="play-btn" onclick="goHome()">
+                    PLAY AGAIN
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        NCERT BRAIN BATTLE 2.0 © 2026
+        <br>
+        LEARN • PLAY • WIN
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
